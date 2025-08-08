@@ -10,6 +10,20 @@ import SignInModal from './components/SignInModal';
 import { generateHousePlan, generateImage } from './services/geminiService';
 import { HomeIcon } from './components/icons';
 import { UserProvider, UserContext } from './contexts/UserContext';
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
+
+// Using HashRouter for client-side routing when deploying to GitHub Pages
+function App() {
+  return (
+    <Router>
+      <Routes>
+        {/* Your routes here */}
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
 
 // Helper function for initial rendering generation
 const generateInitialImageForArea = async (
