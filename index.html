@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Architect 3D Home Modeler</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#4f46e5">
+
+    <!-- iOS PWA Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Architect 3D">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+  <!-- ES Module Shims: Polyfill for importmap support in older browsers like Safari -->
+  <script async src="https://ga.jspm.io/npm:es-module-shims@1.10.0/dist/es-module-shims.js"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.12.0",
+    "jszip": "https://esm.sh/jszip@3.10.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

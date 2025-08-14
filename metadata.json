@@ -1,0 +1,8 @@
+{
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "name": "Architect 3D Home Modeler",
+  "description": "",
+  "prompt": ""
+}

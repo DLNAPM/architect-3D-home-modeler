@@ -1,0 +1,51 @@
+
+/*
+  This file contains CSS fixes and enhancements for cross-browser compatibility,
+  especially for Safari on iOS.
+*/
+
+body {
+  /* Enables smooth fonts on iOS and macOS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+  Fix for <select> elements on iOS.
+  Using 'appearance-none' in Tailwind removes the native dropdown arrow.
+  This CSS adds a custom arrow back using an SVG background image.
+*/
+select.appearance-none {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem; /* Make space for the custom arrow */
+}
+
+/* Dark mode version of the custom select arrow */
+.dark select.appearance-none {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+}
+
+/*
+  Custom scrollbar styling for Webkit-based browsers (Safari, Chrome).
+  This applies to elements with the 'custom-scrollbar' class, like the prompt
+  display in the render gallery.
+*/
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.5); /* Tailwind's gray-400 with opacity */
+  border-radius: 20px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(107, 114, 128, 0.5); /* Tailwind's gray-500 with opacity */
+}
